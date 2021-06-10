@@ -1,0 +1,21 @@
+.li {
+  height: 20px;
+  // border-bottom: 1 solid #000;
+  &::after {
+    display: block;
+    content: '';
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.section-times {
+  position: relative;
+}
+
+.times {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}

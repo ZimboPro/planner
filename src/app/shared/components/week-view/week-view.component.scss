@@ -1,6 +1,12 @@
 .week-section {
   display: flex;
   flex-wrap: nowrap;
+  width: 100%;
+
+  app-day-view {
+    flex: 1 1 auto;
+    margin: 1px;
+  }
 }
 
 .day-odd {

@@ -1,9 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <app-week-view [schedule]="schedule"></app-week-view>
+  <div>
+    <mwl-calendar-week-view
+      [events]="events"
+      [viewDate]="viewDate"
+      [dayStartHour]="6"
+      [weekStartsOn]="1"
+      [eventSnapSize]="5"
+      [dayEndHour]="20"
+      (eventClicked)="onEvent($event)"
+      (hourSegmentClicked)="hourClicked($event)">
+    </mwl-calendar-week-view>
+  </div>
 </ion-content>

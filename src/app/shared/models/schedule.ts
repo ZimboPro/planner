@@ -1,5 +1,11 @@
-import { ScheduleItem } from './schedule-item';
+import { IDay } from './schedule-item';
 
 export interface Schedule {
-  entries: ScheduleItem[];
+  monday?: IDay;
+  tuesday?: IDay;
+  wednesday?: IDay;
+  thursday?: IDay;
+  friday?: IDay;
+  saturday?: IDay;
+  sunday?: IDay;
 }

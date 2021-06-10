@@ -1,22 +1,27 @@
+import { Time } from "./time";
+
 export interface ScheduleItem {
   label: string;
   desc: string;
   color: string;
-  monday?: Day;
-  tuesday?: Day;
-  wednesday?: Day;
-  thursday?: Day;
-  friday?: Day;
-  saturday?: Day;
-  sunday?: Day;
+  monday?: IDay;
+  tuesday?: IDay;
+  wednesday?: IDay;
+  thursday?: IDay;
+  friday?: IDay;
+  saturday?: IDay;
+  sunday?: IDay;
 }
 
-export interface Day {
+export interface IDay {
   times: Times[];
 }
 
 export interface Times {
-  start: Date;
-  end?: Date;
+  start: Time;
+  end?: Time;
+  label: string;
+  desc?: string;
+  color: string;
   done: boolean;
 }

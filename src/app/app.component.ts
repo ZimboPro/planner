@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NotificationsService } from './shared/services/notifications.service';
 import { ThemeService } from './shared/services/theme.service';
 @Component({
   selector: 'app-root',
@@ -7,6 +8,8 @@ import { ThemeService } from './shared/services/theme.service';
 })
 export class AppComponent {
   public appPages = [
+    { title: 'Home', url: '/home', icon: 'mail'},
+    { title: 'Configure', url: '/configure', icon: 'mail'},
     { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
     { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
     { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
@@ -15,5 +18,10 @@ export class AppComponent {
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor(private themeService: ThemeService) {}
+  constructor(
+    private themeService: ThemeService,
+    private notificationService: NotificationsService
+    ) {
+      this.notificationService.requestPermissions();
+    }
 }
